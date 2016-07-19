@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>篮球</title>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
+<link rel="stylesheet" href="css/swiper.min.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/icecream-grid.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/swiper.animate.min.js"></script>
+  <script>
+
+        //remJS
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+//                        alert(docEl.style.fontSize);
+                    };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+  </script>
+
+
+
+
+<style>
+
+/*.swiper-pagination-bullet{
+width: 6px;
+height: 6px;
+background: #fff;
+opacity: .4;
+}
+.swiper-pagination-bullet-active{opacity: 1;}
+@-webkit-keyframes tipmove{
+  0%{bottom:10px;opacity:0}
+  50%{bottom:15px;opacity:1}
+  100%{bottom:20px;opacity:0}
+}
+.ani{position:absolute;}
+.txt{position:absolute;}
+#array{
+  position:absolute;
+  z-index:999;
+  -webkit-animation: tipmove 1.5s infinite ease-in-out;
+}*/
+/*定义样式*/
+*{margin:0;padding:0;}
+html,body{
+  height:100%;
+  font-family:"microsoft yahei";
+  width: 7.5rem;
+  font-size: 0.3rem;
+  margin: 0;
+  padding: 0;
+}
+img{display:block;width:100%;height:100%;}
+.swiper-container {width: 100%;height: 100%;background:#fff;}  
+.swiper-container .swiper-wrapper .swiper-slide{
+  width:100%;
+  height:100%;
+  background-size:100% 100%;
+}
+.swiper-slide:nth-child(1){
+	background:url(images/0.png) no-repeat left top;
+}
+.swiper-slide:nth-child(2){
+  background:url(images/0.png) no-repeat left top;
+}
+.swiper-slide:nth-child(3){
+  background:url(images/0.png) no-repeat left top;
+}
+.swiper-slide:nth-child(4){
+  background:url(images/0.png) no-repeat left top;
+}
+.swiper-slide:nth-child(5){
+  background:url(images/0.png) no-repeat left top;
+}
+/*.grid .i-g div{
+  text-align: center;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden
+}*/
+
+/*第一页样式*/
+.swiper-slide:nth-child(1) .grid .i-g{
+  color:#fff;
+  font-size:14px;
+}
+.swiper-slide:nth-child(1) .grid .i-g .i-12 .logo{
+  width:1.5rem;
+  height:1.5rem;
+  border:0.01rem solid green;
+  border-radius:1.5rem;
+  margin:1rem  3rem;
+  background:#11A212;
+}
+.swiper-slide:nth-child(1) .grid .i-g .i-12 .logo-font{
+  width:7rem;
+  height:1.5rem;
+  margin:0rem auto;
+}
+.swiper-slide:nth-child(1) .grid .i-g  .nav-1 , 
+.swiper-slide:nth-child(1) .grid .i-g  .nav-2 , 
+.swiper-slide:nth-child(1) .grid .i-g  .nav-4 , 
+.swiper-slide:nth-child(1) .grid .i-g  .nav-5{
+  width:1.5rem;
+  height:1.5rem;
+  line-height:1.5rem;
+  text-align:center;
+  border:0.01rem solid #fff;
+  background:rgba(15, 206, 15, 0.5 );
+  border-radius: 1.5rem;
+  margin:1.3rem  1.11rem 0.1rem;
+}
+.swiper-slide:nth-child(1) .grid .i-g  .nav-3{
+  width:1.5rem;
+  height:1.5rem;
+  line-height:1.5rem;
+  text-align:center;
+  background:rgba(15, 206, 15, 0.5 );
+  border:0.01rem solid #fff;
+  border-radius: 1.5rem;
+  margin:0.1rem  3rem;
+}
+.swiper-slide:nth-child(1) .grid .i-g  .nav-4 , 
+.swiper-slide:nth-child(1) .grid .i-g  .nav-5{
+  margin:0.1rem  1.11rem  0.1rem;
+}
+/*第二页样式*/
+.swiper-slide:nth-child(2) .grid .i-g {
+color:#fff;
+font-size:0.2rem;
+height:1.22rem;
+background:#343031;
+}
+.swiper-slide:nth-child(2) .grid .i-g .i-2 {
+  width:1rem;
+  height:1rem;
+  line-height:1rem;
+  text-align:center;
+  border-radius: 1rem;
+  margin:0.12rem;
+}
+.swiper-slide:nth-child(2) .grid .i-g .i-2:hover{
+  width:1rem;
+  height:1rem;
+  line-height:1rem;
+  text-align:center;
+/*  border-radius: 1rem;*/
+  margin:0.12rem;
+  background:#0E0E10;
+}
+.swiper-slide:nth-child(2) .grid .i-g .i-2 .logo{
+  width:1rem;
+  height:1rem;
+  border:0.01rem solid green;
+  border-radius:1rem;
+  background:#11A212;
+}
+.on{ display:none; }
+.block{
+  display:block;
+  z-index:100;
+}
+.on1-1{
+  width:6rem;
+  height:3.5rem;
+  color:#fff;
+  margin:1rem auto;
+  background:rgba(244,244,244,0.15);
+
+}
+.on1-2{
+  width:6rem;
+  height:4rem;
+  color:#fff;
+  margin:0rem auto;
+
+}
+.on1-3{
+  width:6rem;
+  height:1rem;
+  line-height:1rem;
+  text-align:center;
+  color:#fff;
+  margin:0.3rem auto;
+  background:#343031;
+
+}
+.on2-1{
+  width:7rem;
+  text-indent: 0.2rem;
+  height:1.5rem;
+  color:#fff;
+  margin:1rem auto;
+  border-radius:0.1rem;
+  background:rgba(244,244,244,0.15);
+}
+.on2-1 hr{
+  width:1rem;
+  color:#FE860E;
+
+}
+.on2-2{
+  width:7rem;
+  height:7rem;
+  color:#fff;
+  margin:0 auto;
+
+}
+.on2-2-left{
+  width:2rem;
+  height:7rem;
+  color:#fff;
+  float:left;
+  border-radius:0.1rem;
+  background:rgba(244,244,244,0.15);
+
+}
+.on2-2-right{
+  width:4.5rem;
+  height:7rem;
+  color:#fff;
+  float:right;
+
+}
+.on2-2-right img{
+    border-radius:0.1rem;
+}
+.on2-2 .on2-2-right span , .on2-2 .on2-2-left span{
+    color:green;
+}
+@media screen and (min-width:769px ) {
+
+}
+</style>
+</head>
+  <!-- <div class="ani swiper-slide1-1"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.2s">茶</div> -->
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <section class="swiper-slide">
+          <div class="i-container">
+            <div class="grid">
+               <div class="i-g">
+                 <div class="i-12"><img class="ani logo"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.1s"src="images/logo6.png" alt=""></div>
+                 <div class="i-12"><img class="ani logo-font"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.2s"src="images/logo-font.png" alt=""></div>
+                 <div  class="ani i-6 nav-1"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.2s">关于茶叶</div>
+                 <div  class="ani i-6 nav-2"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.3s">茶叶种类</div>
+                 <div  class="ani i-12 nav-3"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.5s">茶道</div>
+                 <div  class="ani i-6 nav-4"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.7s">日本茶具</div>
+                 <div  class="ani i-6 nav-5"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.9s">宝塔诗</div>
+               </div>
+            </div>      
+          </div>        
+        </section>  
+     <!-- -------------slide2------------>
+        <section class="swiper-slide">
+          <div class="i-container">
+              <div class="grid">
+                 <div class="i-g">                
+                   <div class="i-2 "><img class="ani logo"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.2s"src="images/logo6.png" alt=""></div>
+                   <div  class="ani i-2"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.2s">关于茶叶</div>
+                   <div  class="ani i-2"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.2s">茶叶种类</div>
+                   <div  class="ani i-2"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.2s">茶道</div>
+                   <div  class="ani i-2"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.2s">日本茶具</div>
+                   <div  class="ani i-2"  swiper-animate-effect="fadeIn"  swiper-animate-delay="0.2s">宝塔诗</div>
+                 </div>
+              </div>    
+               <div class="one1">
+               <div class="on block">
+                首页<img src="images/2.jpg" alt="">
+               </div>
+               <div class="on  ">
+                     <div class="ani on1-1"  swiper-animate-effect="fadeInLeft"  swiper-animate-delay="0.2s" >&nbsp&nbsp&nbsp&nbsp<strong style="font-size:0.5rem;">茶</strong>者，南方之嘉木也。其字，或从草，或从木，或草木并。　其地，上者生烂石，中者生栎壤，下者生黄土。<br>
+
+                       　茶之为用，味至寒，为饮最宜。精行俭德之人，若热渴、凝闷、脑疼、目涩、四肢烦、百节不舒，聊四五啜，与醍醐、甘露抗衡也。
+                       <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp--陆羽《茶经》
+                     </div>
+                     <div class="ani on1-2"  swiper-animate-effect="fadeInRight"  swiper-animate-delay="0.2s"><img src="images/on-1.png" alt=""></div>
+                    <div class="ani  on1-3"  swiper-animate-effect="fadeInUp"  swiper-animate-delay="0.2s">茶之为饮，发乎神农氏</div>
+                </div>
+               <div class="on ">
+                     <img src="images/3.jpg" alt="">
+               </div>
+               <div class="on ">
+                    <div class="ani on2-1"  swiper-animate-effect="fadeInLeft"  swiper-animate-delay="0.2s" >茶道<hr>
+                   茶道，就是品赏茶的美感知道。通过沏茶，赏茶，闻茶，饮茶，美心修德，学习礼法的一种和美仪式。
+                     </div>
+                     <div class=" on2-2"  >
+                       <div class="on2-2-left ani" swiper-animate-effect="fadeInRight"  swiper-animate-delay="0.2s">
+                         茶道<span>三点</span><br>
+                         即新茶，甘泉，洁器。<br>
+                         茶道<span>六君子</span><br>
+                         即茶匙、茶针、茶漏、茶夹、茶则、茶桶。<br>
+                         茶道<span>九难</span><br>
+                         即造、别、器、火、水、炙、末、煮、饮。
+                       </div>
+                       <div class="on2-2-right ani" swiper-animate-effect="fadeInLeft"  swiper-animate-delay="0.2s"><img src="images/3.jpg" alt=""></div>
+
+                    </div>
+                  
+               <div class="on ">5</div>
+           </div>  
+            </div>
+          
+
+        </section>
+     <!----------------slide3-------------->
+        <section class="swiper-slide">
+        </section>
+     <!----------------slide4-------------->
+        <section class="swiper-slide">
+        </section>
+     <!----------------slide5-------------->
+        <section class="swiper-slide">
+        </section>
+     <!----------------slide6-------------->
+        <section class="swiper-slide">
+        </section>
+    </div>
+</div>
+
+<script> 	  
+
+  var mySwiper = new Swiper ('.swiper-container', {
+   direction : 'vertical',
+   // pagination: '.swiper-pagination',
+   mousewheelControl : true,
+   onInit: function(swiper){
+   swiperAnimateCache(swiper);
+   swiperAnimate(swiper);
+	  },
+   onSlideChangeEnd: function(swiper){
+	swiperAnimate(swiper);
+    }	  
+	   }) 
+
+       $(function(){
+            $(".swiper-slide:nth-child(2) .grid .i-g .i-2").click(function(){
+                $(".swiper-slide:nth-child(2) .grid .i-g .i-2").eq($(this).index()).addClass("block").siblings().removeClass("block");
+                $(".on").hide().eq($(this).index()).show()
+            })
+        })        
+  </script>
+</body>
+</html>
